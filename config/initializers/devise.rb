@@ -10,11 +10,18 @@ Devise.setup do |config|
     ]
     jwt.expiration_time = 30.minutes.to_i
   end
+
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
-  # by default. You can change it below and use your own secret key.
+  # by default. You can chang
+  config.warden do |warden|
+    warden.scope_defaults :user, store: false  # <---- This will use the config even if it's not passed to the method opts
+    warden.scope_defaults :admin, store: false # <---- You need to configure it for each scope you need it for
+  end
+
   # config.secret_key = 'e99df380e72850c8641122f089099c532d2639427c43fcb8486cca68c9f16426642b66eedb66ee1cd2c10436510b58b1453f0e8cee0768cd6a3b03c2ce3b6e5c'
 
   # ==> Controller configuration
