@@ -39,7 +39,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # Development setting for devise (change to host in production)
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 4100 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

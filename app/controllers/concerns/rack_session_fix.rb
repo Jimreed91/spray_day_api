@@ -1,8 +1,6 @@
 # devise throws an error as session is not enabled
 # as this is an api we dont want to enable sessions,
 # this solution creates a fake session to satisfy devise/Rails7
-
-
 module RackSessionFix
   extend ActiveSupport::Concern
   class FakeRackSession < Hash
